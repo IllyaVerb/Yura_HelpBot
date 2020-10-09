@@ -6,13 +6,13 @@ import re, time, os
 import classes.Student_In_Meeting as sim
 
 DEBUG = False
-TOKEN = os.environ['TOKEN']
-print(TOKEN)
+TOKEN = str(os.environ['TOKEN'])
 ADMIN = ['460390112']
 student = None
 
 
 def start(update, context):
+    print("start")
     context.bot.send_message(chat_id=update.effective_chat.id,
                              text="Привіт. Я можу під'єднатись під будь яким іменем "+
                              "до конференції на сайті https://bbb.comsys.kpi.ua/\n"+
