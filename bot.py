@@ -1,12 +1,12 @@
 from telegram import ReplyKeyboardMarkup, ReplyKeyboardRemove
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 
-import re, time
+import re, time, os
 
 import classes.Student_In_Meeting as sim
 
-DEBUG = True
-TOKEN = '1393681341:AAE3DVDR3xd1KwcQEJJmtdCT2UOX9fmy1r0'
+DEBUG = False
+TOKEN = os.environ['TOKEN']
 ADMIN = ['460390112']
 student = None
 
