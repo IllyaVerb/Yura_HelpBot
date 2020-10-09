@@ -7,6 +7,7 @@ import classes.Student_In_Meeting as sim
 
 DEBUG = False
 TOKEN = os.environ['TOKEN']
+print(TOKEN)
 ADMIN = ['460390112']
 student = None
 
