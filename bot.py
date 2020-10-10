@@ -6,7 +6,7 @@ import re, time, os
 import classes.Student_In_Meeting as sim
 
 DEBUG = False
-TOKEN = str(os.environ['TOKEN'])
+TOKEN = os.environ['TOKEN']
 ADMIN = ['460390112']
 student = None
 
@@ -60,6 +60,6 @@ else:
     updater.start_webhook(listen="0.0.0.0",
                           port=int(os.environ.get('PORT', '8443')),
                           url_path=TOKEN)
-    updater.bot.set_webhook("https://testbot2202.herokuapp.com/" + TOKEN)
+    updater.bot.set_webhook("https://yurahelpbot.herokuapp.com/" + TOKEN)
 
 updater.idle()
