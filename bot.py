@@ -76,7 +76,7 @@ def go_in(update, context):
     input_data = update.message.text.split('\n')
     
     print('start', input_data)
-    if update.effective_chat.id in DATABASE and DATABASE[update.effective_chat.id][0] is not None:
+    if update.effective_chat.id in DATABASE and DATABASE[update.effective_chat.id]['tab_handler'] is not None:
         context.bot.send_message(chat_id=update.effective_chat.id,
                                  text="Ви вже знаходитесь на лекції, для нового підключення вийдіть з минулого " +
                                       "(команда /end), або дочекайтесь його закінчення.")
