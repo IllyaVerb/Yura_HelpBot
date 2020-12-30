@@ -9,7 +9,7 @@ import re
 class Student_In_Meeting:
     def __init__(self):
         self.driver = webdriver.Chrome()
-        self.driver.implicitly_wait(5)
+        self.driver.implicitly_wait(10)
 
     def go_to_tab(self, handler):
         all_handlers = self.driver.window_handles
