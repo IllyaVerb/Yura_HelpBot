@@ -73,7 +73,7 @@ class Student_In_Meeting:
         if not self.go_to_tab(handler):
             return False
         self.driver.find_element_by_id("tippy-4").send_keys(Keys.ENTER)
-        self.driver.find_element_by_xpath("//li[@aria-labelledby='dropdown-item-label-15']").send_keys(Keys.ENTER)
+        self.driver.find_element_by_xpath("//i[contains(@class, 'icon-bbb-more')]").send_keys(Keys.ENTER)
         self.driver.find_element_by_xpath("//i[contains(@class, 'icon-bbb-logout')]").send_keys(Keys.ENTER)
         self.remove_current_tab(current_handler)
         return True
