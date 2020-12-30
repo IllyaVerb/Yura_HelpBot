@@ -35,6 +35,7 @@ def current_lec_ending(time_struct):
 
 def start(update, context):
     print("start")
+    print(DATABASE)
     context.bot.send_message(chat_id=update.effective_chat.id, reply_markup=ReplyKeyboardRemove(),
                              text="Привіт. Я можу під'єднатись під будь яким іменем "+
                              "до конференції на сайті https://bbb.comsys.kpi.ua/\n"+
@@ -42,7 +43,8 @@ def start(update, context):
 
 
 def end(update, context):
-    print('end')
+    print('end\n')
+    print(DATABASE)
     if update.effective_chat.id in DATABASE and DATABASE[update.effective_chat.id] is not None:
         if not student.exit_meeting(DATABASE[update.effective_chat.id]['tab_handler']):
             context.bot.send_message(chat_id=update.effective_chat.id,

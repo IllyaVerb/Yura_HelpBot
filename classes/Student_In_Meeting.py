@@ -72,7 +72,7 @@ class Student_In_Meeting:
         current_handler = self.driver.current_window_handle
         if not self.go_to_tab(handler):
             return False
-        self.driver.find_element_by_id("tippy-4").send_keys(Keys.ENTER)
+        #self.driver.find_element_by_id("tippy-4").send_keys(Keys.ENTER)
         self.driver.find_element_by_xpath("//i[contains(@class, 'icon-bbb-more')]").send_keys(Keys.ENTER)
         self.driver.find_element_by_xpath("//i[contains(@class, 'icon-bbb-logout')]").send_keys(Keys.ENTER)
         self.remove_current_tab(current_handler)
