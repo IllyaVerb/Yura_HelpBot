@@ -11,7 +11,7 @@ class Student_In_Meeting:
     def __init__(self):
         opt = Options()
         opt.add_argument("--disable-infobars")
-        opt.add_argument("start-maximized")
+        #opt.add_argument("start-maximized")
         opt.add_argument("--disable-extensions")
         # Pass the argument 1 to allow and 2 to block
         opt.add_experimental_option("prefs", { 
@@ -51,7 +51,7 @@ class Student_In_Meeting:
         name_input.send_keys(name, Keys.ENTER)
         
         try:
-            btn_just_listen = self.driver.find_element_by_xpath("//button[@aria-label='Только слушать']")
+            btn_just_listen = self.driver.find_element_by_xpath("//i[contains(@class, 'icon-bbb-listen')]")
         except NoSuchElementException:
             dict_answer['status'] = False
             return dict_answer
@@ -74,7 +74,7 @@ class Student_In_Meeting:
             return False
         self.driver.find_element_by_id("tippy-4").send_keys(Keys.ENTER)
         self.driver.find_element_by_xpath("//li[@aria-labelledby='dropdown-item-label-15']").send_keys(Keys.ENTER)
-        self.driver.find_element_by_xpath("//button[@description='Выйти из конференции']").send_keys(Keys.ENTER)
+        self.driver.find_element_by_xpath("//i[contains(@class, 'icon-bbb-logout')]").send_keys(Keys.ENTER)
         self.remove_current_tab(current_handler)
         return True
 
@@ -86,4 +86,4 @@ class Student_In_Meeting:
         return len(self.driver.find_elements_by_xpath(xpath)) > 0
 
     def is_ended(self):
-        return self.check_exists_by_xpath("//button[@description='Выйти из конференции']")
+        return self.check_exists_by_xpath("//i[contains(@class, 'icon-bbb-logout')]")
