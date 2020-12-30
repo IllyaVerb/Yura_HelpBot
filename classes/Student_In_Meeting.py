@@ -24,10 +24,10 @@ class Student_In_Meeting:
         self.driver.switch_to.window(self.driver.window_handles[-1])
         return self.driver.current_window_handle
 
-    def remove_current_tab(self, previous_handler):
+    def remove_current_tab(self, previous_handler='NULL'):
         self.driver.execute_script("window.close();")
         self.driver.switch_to.window(
-            previous_handler if previous_handler in self.driver.window_handles else self.driver.window_handles[0])
+            previous_handler if previous_handler != 'NULL' and previous_handler in self.driver.window_handles else self.driver.window_handles[0])
         return True
 
     def go_in_meeting(self, url, name, init_msg=[]):
