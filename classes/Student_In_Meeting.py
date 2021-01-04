@@ -5,6 +5,7 @@ from selenium.webdriver.chrome.options import Options
 from selenium.common.exceptions import NoSuchElementException
 
 import re
+from time import sleep
 
 
 class Student_In_Meeting:
@@ -48,6 +49,7 @@ class Student_In_Meeting:
         input_id = re.findall("<input required=\"required\" class=\"form-control join-form\".+id=\"(.+)\" />",
                               req.get(url).text)[0]
         name_input = self.driver.find_element_by_id(input_id)
+        name_input.send_keys('.', Keys.CONTROL, 'a')
         name_input.send_keys(name, Keys.ENTER)
         
         try:
